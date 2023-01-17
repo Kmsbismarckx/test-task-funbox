@@ -32,7 +32,6 @@ const MainItem = ({ id }) => {
       <div
         className={`main__item `}
         onClick={onActive}
-        onTouchStart={onActive}
         onMouseEnter={onHover}
         onMouseLeave={onOut}
       >
