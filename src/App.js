@@ -9,10 +9,10 @@ function App() {
     store.entities[item.id] = item;
     store.ids.push(item.id);
   });
-  console.log(store);
+  const publicUrl = process.env.PUBLIC_URL;
 
   return (
-    <appContext.Provider value={store}>
+    <appContext.Provider value={{ store, publicUrl }}>
       <div className="main">
         <div className="main__content">
           <h1 className="main__title">Ты сегодня покормил кота?</h1>

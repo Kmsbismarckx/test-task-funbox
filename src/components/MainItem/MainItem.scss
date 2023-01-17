@@ -1,0 +1,238 @@
+@import "../../styles/variables";
+
+.main__item {
+  width: 320px;
+  z-index: 5;
+  cursor: pointer;
+  user-select: none;
+  @media screen and (max-width: 375px) {
+    width: 280px;
+  }
+}
+
+.item__description {
+  position: relative;
+  background-color: white;
+  flex: 1 1 auto;
+  height: 436px;
+  border: 4px solid $item_color;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  padding: 0 57px 0 44px;
+  margin-bottom: 14px;
+}
+
+.item__img {
+  position: absolute;
+  left: -24px;
+  bottom: -88px;
+  width: 370px;
+  z-index: 0;
+}
+
+.item__circle {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+
+  width: 80px;
+  height: 80px;
+  padding-top: 20px;
+
+  border-radius: 50%;
+
+  background-color: $item_color;
+
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 32px;
+  text-align: center;
+  color: white;
+}
+
+.item__measure {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 22px;
+}
+
+.item__prompt {
+  color: white;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  cursor: default;
+  .item__link {
+    display: inline-block;
+    color: $item_color;
+    span {
+      padding-bottom: 1px;
+      border-bottom: 0.5px dashed $item_color;
+      cursor: pointer;
+    }
+  }
+}
+
+.item__header {
+  display: flex;
+  height: 44px;
+}
+
+.item__corner {
+  width: 44px;
+  background: linear-gradient(
+    -45deg,
+    #fff,
+    #fff 28.5px,
+    $item_color 0,
+    #1698d9 33px,
+    transparent 0
+  );
+}
+
+.header__name {
+  flex-grow: 1;
+
+  background-color: white;
+
+  padding-top: 21px;
+  padding-left: 5.5px;
+
+  border: 4px solid $item_color;
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0 12px 0 0;
+}
+
+.description__name {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.description__composition {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: black;
+
+  margin-bottom: 15px;
+}
+
+.main__item_active {
+  .item__description {
+    border-color: $item_active_color;
+  }
+  .header__name {
+    border-color: $item_active_color;
+  }
+  .item__corner {
+    background: linear-gradient(
+      -45deg,
+      #fff,
+      #fff 28.5px,
+      $item_active_color 0,
+      $item_active_color 33px,
+      transparent 0
+    );
+  }
+  .item__circle {
+    background-color: $item_active_color;
+  }
+}
+
+.main__item_not-available {
+  cursor: not-allowed;
+  .item__description {
+    border-color: $item_not-available_color;
+    background-color: #f2f2f2;
+  }
+  .header__name {
+    border-color: $item_not-available_color;
+    background-color: #f2f2f2;
+  }
+  .header__name span,
+  .description__name,
+  .description__composition,
+  .description__quantity,
+  .description__present,
+  .item__img {
+    opacity: 0.5;
+    color: $item_not-available_color;
+  }
+
+  .item__corner {
+    background: linear-gradient(
+      -45deg,
+      #f2f2f2,
+      #f2f2f2 28.5px,
+      $item_not-available_color 0,
+      $item_not-available_color 33px,
+      transparent 0
+    );
+  }
+  .item__circle {
+    background-color: $item_not-available_color;
+  }
+  .item__prompt {
+    color: #ffff66;
+  }
+}
+
+.main__item:hover:not(.main__item_not-available, .main__item_active) {
+  .item__description {
+    border-color: $item_hover_color;
+  }
+  .header__name {
+    border-color: $item_hover_color;
+  }
+  .item__corner {
+    background: linear-gradient(
+      -45deg,
+      #fff,
+      #fff 28.5px,
+      $item_hover_color 0,
+      $item_hover_color 33px,
+      transparent 0
+    );
+  }
+  .item__circle {
+    background-color: $item_hover_color;
+  }
+  .item__link {
+    span {
+      color: $item_hover_color;
+      border-color: $item_hover_color;
+    }
+  }
+}
+
+.main__item_active:hover:not(.main__item_not-available) {
+  .item__description {
+    border-color: $item_active_hover_color;
+  }
+  .header__name {
+    border-color: $item_active_hover_color;
+  }
+  .item__corner {
+    background: linear-gradient(
+      -45deg,
+      #fff,
+      #fff 28.5px,
+      $item_active_hover_color 0,
+      $item_active_hover_color 33px,
+      transparent 0
+    );
+  }
+  .item__circle {
+    background-color: $item_active_hover_color;
+  }
+  .item__link {
+    span {
+      color: $item_active_hover_color;
+      border-color: $item_active_hover_color;
+    }
+  }
+}
