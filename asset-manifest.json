@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/test-task-funbox/static/css/main.53915d46.css",
-    "main.js": "/test-task-funbox/static/js/main.b91146a6.js",
+    "main.js": "/test-task-funbox/static/js/main.e0b8473b.js",
     "static/media/background.png": "/test-task-funbox/static/media/background.28ae42897911bd99b7e5.png",
     "index.html": "/test-task-funbox/index.html",
     "main.53915d46.css.map": "/test-task-funbox/static/css/main.53915d46.css.map",
-    "main.b91146a6.js.map": "/test-task-funbox/static/js/main.b91146a6.js.map"
+    "main.e0b8473b.js.map": "/test-task-funbox/static/js/main.e0b8473b.js.map"
   },
   "entrypoints": [
     "static/css/main.53915d46.css",
-    "static/js/main.b91146a6.js"
+    "static/js/main.e0b8473b.js"
   ]
 }
