@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/test-task-funbox/static/css/main.38f28a53.css",
+    "main.js": "/test-task-funbox/static/js/main.130845e5.js",
+    "static/media/background.png": "/test-task-funbox/static/media/background.28ae42897911bd99b7e5.png",
+    "index.html": "/test-task-funbox/index.html",
+    "main.38f28a53.css.map": "/test-task-funbox/static/css/main.38f28a53.css.map",
+    "main.130845e5.js.map": "/test-task-funbox/static/js/main.130845e5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38f28a53.css",
+    "static/js/main.130845e5.js"
+  ]
+}
