@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.scss";
+import appContext from "./context";
+import MainItem from "./components/MainItem/MainItem";
+import itemsData from "./data/items.json";
 
 function App() {
+  const store = { ids: [], entities: {} };
+  itemsData.forEach((item) => {
+    store.entities[item.id] = item;
+    store.ids.push(item.id);
+  });
+  console.log(store);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <appContext.Provider value={store}>
+      <div className="main">
+        <div className="main__content">
+          <h1 className="main__title">Ты сегодня покормил кота?</h1>
+          <div className="main__goods">
+            {store.ids.map((id) => (
+              <MainItem key={id} id={id} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </appContext.Provider>
   );
 }
 
