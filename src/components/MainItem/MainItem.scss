@@ -81,6 +81,7 @@
 }
 
 .item__corner {
+  cursor: default;
   width: 44px;
   background: linear-gradient(
     -45deg,
@@ -121,7 +122,7 @@
   margin-bottom: 15px;
 }
 
-.main__item_active {
+.main__item-container_active {
   .item__description {
     border-color: $item_active_color;
   }
@@ -143,96 +144,100 @@
   }
 }
 
-.main__item_not-available {
+.main__item-container_not-available {
   cursor: not-allowed;
-  .item__description {
-    border-color: $item_not-available_color;
-    background-color: #f2f2f2;
-  }
-  .header__name {
-    border-color: $item_not-available_color;
-    background-color: #f2f2f2;
-  }
-  .header__name span,
-  .description__name,
-  .description__composition,
-  .description__quantity,
-  .description__present,
-  .item__img {
-    opacity: 0.5;
-    color: $item_not-available_color;
-  }
+  .main__item {
+    cursor: inherit;
+    .item__description {
+      border-color: $item_not-available_color;
+      background-color: #f2f2f2;
+    }
+    .header__name {
+      border-color: $item_not-available_color;
+      background-color: #f2f2f2;
+    }
+    .header__name span,
+    .description__name,
+    .description__composition,
+    .description__quantity,
+    .description__present,
+    .item__img {
+      opacity: 0.5;
+      color: $item_not-available_color;
+    }
 
-  .item__corner {
-    background: linear-gradient(
-      -45deg,
-      #f2f2f2,
-      #f2f2f2 28.5px,
-      $item_not-available_color 0,
-      $item_not-available_color 33px,
-      transparent 0
-    );
-  }
-  .item__circle {
-    background-color: $item_not-available_color;
+    .item__corner {
+      background: linear-gradient(
+        -45deg,
+        #f2f2f2,
+        #f2f2f2 28.5px,
+        $item_not-available_color 0,
+        $item_not-available_color 33px,
+        transparent 0
+      );
+    }
+    .item__circle {
+      background-color: $item_not-available_color;
+    }
   }
   .item__prompt {
+    cursor: inherit;
     color: #ffff66;
   }
 }
 
-.main__item:hover:not(.main__item_not-available, .main__item_active) {
-  .item__description {
-    border-color: $item_hover_color;
-  }
-  .header__name {
-    border-color: $item_hover_color;
-  }
-  .item__corner {
-    background: linear-gradient(
-      -45deg,
-      #fff,
-      #fff 28.5px,
-      $item_hover_color 0,
-      $item_hover_color 33px,
-      transparent 0
-    );
-  }
-  .item__circle {
-    background-color: $item_hover_color;
-  }
-  .item__link {
-    span {
-      color: $item_hover_color;
+.main__item-container:not(
+    .main__item-container_not-available,
+    .main__item-container_active
+  ) {
+  .main__item:hover {
+    .item__description {
       border-color: $item_hover_color;
+    }
+    .header__name {
+      border-color: $item_hover_color;
+    }
+    .item__corner {
+      background: linear-gradient(
+        -45deg,
+        #fff,
+        #fff 28.5px,
+        $item_hover_color 0,
+        $item_hover_color 33px,
+        transparent 0
+      );
+    }
+    .item__circle {
+      background-color: $item_hover_color;
     }
   }
 }
-
-.main__item_active:hover:not(.main__item_not-available) {
-  .item__description {
-    border-color: $item_active_hover_color;
+.item__link {
+  span:hover {
+    color: $item_hover_color;
+    border-color: $item_hover_color;
   }
-  .header__name {
-    border-color: $item_active_hover_color;
-  }
-  .item__corner {
-    background: linear-gradient(
-      -45deg,
-      #fff,
-      #fff 28.5px,
-      $item_active_hover_color 0,
-      $item_active_hover_color 33px,
-      transparent 0
-    );
-  }
-  .item__circle {
-    background-color: $item_active_hover_color;
-  }
-  .item__link {
-    span {
-      color: $item_active_hover_color;
+}
+.main__item-container_hover:hover:not(.main__item-container_not-available) {
+  .main__item:hover {
+    .item__description {
       border-color: $item_active_hover_color;
+    }
+    .header__name {
+      border-color: $item_active_hover_color;
+    }
+    .item__corner {
+      background: linear-gradient(
+        -45deg,
+        #fff,
+        #fff 28.5px,
+        $item_active_hover_color 0,
+        $item_active_hover_color 33px,
+        transparent 0
+      );
+    }
+    .item__circle {
+      background-color: $item_active_hover_color;
     }
   }
 }
